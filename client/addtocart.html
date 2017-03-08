@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shopping Cart</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/css/custom.css"/>
+		<link href="css/style.css" rel="stylesheet">
+		<!-- Load Vue JS -->
+		<script src="https://unpkg.com/vue"></script>
+		<!-- Load Axios -->
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<nav class="navbar">
+				<div class="container">
+					<a class="navbar-brand" href="#">Your online store</a>
+					<div class="navbar-right">
+						<div class="container minicart"></div>
+					</div>
+				</div>
+			</nav>
+
+			<div class="container-fluid breadcrumbBox text-center">
+				<!-- <ol class="breadcrumb">
+					<li><a href="#">Review</a></li>
+					<li class="active"><a href="#">Order</a></li>
+					<li><a href="#">Payment</a></li>
+				</ol> -->
+			</div>
+
+			<div class="container text-center">
+
+				<div class="col-md-5 col-sm-12">
+					<div class="bigcart"></div>
+					<h1>Your shopping cart</h1>
+				</div>
+
+				<div class="col-md-7 col-sm-12 text-left">
+					<ul>
+						<li class="row list-inline columnCaptions">
+							<span>QTY</span>
+							<span>ITEM</span>
+							<span>Price</span>
+						</li>
+						<li class="row">
+							<span class="quantity">1</span>
+							<span class="itemName">Birthday Cake</span>
+							<span class="popbtn"><a class="arrow"></a></span>
+							<span class="price">$49.95</span>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+
+			<!-- The popover content -->
+
+			<div id="popover" style="display: none">
+				<a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+			</div>
+
+			<div class="row">
+
+					<div class="col-sm-4 col-lg-4 col-md-4" v-for="book in books">
+							<div class="thumbnail">
+									<img src="http://placehold.it/320x150" alt="">
+									<div class="caption">
+											<h4><a href="#">{{ book.title }}</a></h4>
+											<h4>{{ book.price }}</h4>
+											<p>{{ book.description }}</p>
+											<p>Penulis : {{ book.author }}</p>
+											<p>Category : {{ book.category }}</p>
+									</div>
+									<div class="ratings">
+										<input type="text" name="quantity"><a class="btn btn-info" style="width: 100%;" href="addtocart.html">Add to Cart</a>
+									</div>
+							</div>
+					</div>
+
+			</div>
+		</div>
+
+		<!-- JavaScript includes -->
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/customjs.js"></script>
+		<!-- Vue JS -->
+    <script src="js/script.js"></script>
+	</body>
+</html>
